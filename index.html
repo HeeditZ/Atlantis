@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AWP.GG Script Editor</title>
+  <title>MuYe Hub - Script Editor</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
@@ -108,6 +108,9 @@
       font-size: 1rem;
       outline: none;
     }
+    textarea:disabled {
+      opacity: 1; /* Ensure disabled text is fully visible */
+    }
     .controls {
       display: flex;
       justify-content: space-between;
@@ -143,7 +146,7 @@
   <div class="container">
     <!-- Left Section -->
     <div class="left-section">
-      <h1>Unlock the Power of Emulation with AWP.GG</h1>
+      <h1>Unlock the Power of Emulation with MuYe Hub</h1>
       <p>Unleash your potential on Roblox: Unify your code, optimize your play, and bypass detection with cutting-edge emulation and stealth technology.</p>
       <button class="cta-button">Get Started</button>
     </div>
@@ -164,8 +167,9 @@
 
       <!-- Script Editor -->
       <div class="editor">
-        <textarea id="script-editor">-- Welcome to AWP.GG!
-print("Hello, World!")</textarea>
+        <textarea id="script-editor" disabled>
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HeeditZ/muye-hub/refs/heads/main/Muye-HUB-games"))()
+        </textarea>
       </div>
 
       <!-- Output Console -->
@@ -183,24 +187,10 @@ print("Hello, World!")</textarea>
       // Update editor content based on tab (optional)
     }
 
-    // Execute the script
+    // Simulate script execution
     function executeScript() {
-      const script = document.getElementById('script-editor').value;
       const outputConsole = document.getElementById('output-console');
-      outputConsole.innerHTML = ''; // Clear previous output
-
-      try {
-        // Create a sandboxed environment to execute the script
-        const sandbox = {};
-        const scriptFunction = new Function(script); // Convert script to a function
-        scriptFunction.call(sandbox); // Execute in sandboxed context
-
-        // Display success message
-        outputConsole.innerHTML += `> Script executed successfully\n`;
-      } catch (error) {
-        // Display error message
-        outputConsole.innerHTML += `> Error: ${error.message}\n`;
-      }
+      outputConsole.innerHTML += '> Executed Muye-hub\n';
     }
 
     // Clear the output console
